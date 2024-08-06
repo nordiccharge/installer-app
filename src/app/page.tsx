@@ -6,7 +6,6 @@ import { useFormState } from 'react-dom';
 export default function Home(): JSX.Element {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(e.target.serialNumber?.value);
   }
 
   return (
