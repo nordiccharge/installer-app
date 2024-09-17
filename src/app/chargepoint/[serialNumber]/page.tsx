@@ -5,7 +5,7 @@ import { unstable_noStore } from "next/cache";
 import { redirect } from "next/navigation";
 import ExitButton from "@/app/ExitButton";
 
-export async function getChargePoint(serialNumber: string): Promise<[Boolean, any]> {
+async function getChargePoint(serialNumber: string): Promise<[Boolean, any]> {
     
     const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/chargers/${serialNumber}`, {method: "GET"});
     if (!response.ok) {
@@ -16,7 +16,7 @@ export async function getChargePoint(serialNumber: string): Promise<[Boolean, an
     }
 }
 
-export async function getGuideData(id: string): Promise<[Boolean, any | null]> {
+async function getGuideData(id: string): Promise<[Boolean, any | null]> {
     
     const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/guides/${id}`, {method: "GET"});
 
