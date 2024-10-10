@@ -4,7 +4,7 @@ export default function Step ({ stepData, chargerData }: { stepData: any, charge
 
     const metaData = JSON.parse(chargerData?.data);
 
-    if (stepData?.type === "monta") {
+    if (stepData?.type === "monta" && (metaData?.monta_url != null || metaData?.monta_url != "")) {
         return (
             <div className="flex flex-col flex-1 max-h-full w-full space-y-2 pt-2">
                 <h1 className="flex-none text-xl">{stepData?.title}</h1>
